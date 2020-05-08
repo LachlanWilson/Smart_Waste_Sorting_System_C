@@ -12,15 +12,16 @@ void setup() {
 }
 
 int Sensor() {
-  //Colour Readings
-  int Vi = sensor.getViolet();
-  int Bl = sensor.getBlue();
-  int Gr = sensor.getGreen();
-  int Ye = sensor.getYellow();
-  int Or = sensor.getOrange();
-  int Re = sensor.getRed();
+  //NIR Readings
 
-  int SensorData[6] = {Vi,Bl,Gr,Ye,Or,Re};
+  int R = sensor.getR();
+  int S = sensor.getS();
+  int T = sensor.getT();
+  int U = sensor.getU();
+  int V = sensor.getV();
+  int W = sensor.getW();
+
+  int SensorData[6] = {R,S,T,U,V,W};
   
   return SensorData;
 }
