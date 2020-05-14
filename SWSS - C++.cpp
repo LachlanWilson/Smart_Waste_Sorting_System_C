@@ -27,28 +27,36 @@ int Sensor() {
 }
 
 void MechElements(int SensorInfo) {
-
+  if (SensorInfo == 0){
+    //allow any material to pass, this is undefined material
+  } else if (SensorInfo == 1){
+    //sort into material 1
+  } else if (SensorInfo == 2){
+    //sort into material 2
+  } else if (SensorInfo == 3){
+    //sort into material 3
+  } else if (SensorInfo == 4){
+    //sort into material 4
+  } 
+  // many of these could be made depending on number of known materials
 }
 
-int DataInterprate(int sensorData[6]) {
-  if (sensorData[0] == 100){
+int DataInterpret(int sensorData[6]) {
+  if (((sensorData[0] > 0)&&(sensorData[0] < 100))&&((sensorData[1] > 0)&&(sensorData[1] < 100))){
       // example
     return 1;
-  }else if (sensorData[1] == 50){
+  }else if (sensorData[1] > 100){
     // nested if statements will be used also here, so that we can check for very specific conditions
     return 2;
   }
-  return 0;
+  return 0; // no material or unknown material
 }
 
 
 void loop(){
   while (true) {
     int sensorData = Sensor(); // return number
-    int SensorInterp = DataInterprate(sensorData);
-    if (SensorInterp != 0) {
-      // do anything that needs to happen for processing the data
-      MechElements(SensorInterp);
-    }
+    int SensorInterp = DataInterpret(sensorData);
+    MechElements(SensorInterp);
   }
 }
