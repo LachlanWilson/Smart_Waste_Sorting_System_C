@@ -22,7 +22,12 @@ void Sensor() {
   int V = sensor.getV();
   int W = sensor.getW();
 
-  SensorData = {R,S,T,U,V,W};
+  SensorData[0] = R;
+  SensorData[1] = S; 
+  SensorData[2] = T;
+  SensorData[3] = U;
+  SensorData[4] = V;
+  SensorData[5] = W;
 }
 
 void MechElements(int SensorInfo) {
@@ -55,7 +60,7 @@ int DataInterpret() {
 void loop(){
   while (true) {
     Sensor(); // return number
-    int SensorInterp = DataInterpret(sensorData);
+    int SensorInterp = DataInterpret();
     MechElements(SensorInterp);
   }
 }
