@@ -1,5 +1,4 @@
-// SWSS - C++.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+
 #include "AS726X.h"
 
 AS726X sensor;
